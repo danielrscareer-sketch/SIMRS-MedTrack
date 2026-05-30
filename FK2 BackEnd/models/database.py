@@ -25,12 +25,13 @@ if is_sqlite:
 else:
     # PostgreSQL Configuration
     engine = create_async_engine(
-        settings.DATABASE_URL, # Keep SSL and other connection params intact
+        settings.DATABASE_URL.split("?")[0], # Strip query params that asyncpg doesn't support
         echo=False,
         pool_pre_ping=True,
         pool_size=10,
         max_overflow=20,
         connect_args={
+            "ssl": True, # Enforce SSL which is required by Neon PostgreSQL
             "statement_cache_size": 0,
             "prepared_statement_cache_size": 0,
         }

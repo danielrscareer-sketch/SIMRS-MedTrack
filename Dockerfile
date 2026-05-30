@@ -9,11 +9,11 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy backend requirements
-COPY "FK2 BackEnd/requirements.txt" .
+COPY ["FK2 BackEnd/requirements.txt", "."]
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend code
-COPY "FK2 BackEnd/" .
+COPY ["FK2 BackEnd/", "."]
 
 # Hugging Face Spaces uses port 7860
 ENV PORT=7860

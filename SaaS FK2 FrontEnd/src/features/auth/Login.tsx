@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Activity, ArrowRight, User, Lock, Eye, EyeOff, GraduationCap, Stethoscope, Briefcase } from 'lucide-react';
+import api from '../../lib/api';
 import './Login.css';
 
 const Login: React.FC = () => {
@@ -9,20 +10,40 @@ const Login: React.FC = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [role, setRole] = useState('mahasiswakoas'); // Default role
     const [isLoaded, setIsLoaded] = useState(false);
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         setIsLoaded(true);
     }, []);
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        
-        // Save the role to local storage so Dashboard knows who is logging in
-        localStorage.setItem('userRole', role);
-        
-        // Redirect to dashboard
-        navigate('/dashboard');
+        setError('');
+        setLoading(true);
+
+        try {
+            const response = await api.post('/api/auth/login', {
+                username: identifier,
+                password: password,
+                role: role
+            });
+            
+            if (response.data.success) {
+                // Save the role to local storage so Dashboard knows who is logging in
+                localStorage.setItem('userRole', role);
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('user', JSON.stringify(response.data.user));
+                
+                // Redirect to dashboard
+                navigate('/dashboard');
+            }
+        } catch (err: any) {
+            setError(err.response?.data?.detail || 'Terjadi kesalahan saat login.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -167,10 +188,12 @@ const Login: React.FC = () => {
                                 Lupa sandi?
                             </a>
                         </div>
+                        
+                        {error && <div className="error-message text-red-500 text-sm mb-4">{error}</div>}
 
-                        <button type="submit" className="submit-btn group">
-                            Masuk Sekarang
-                            <ArrowRight size={20} className="arrow-icon" />
+                        <button type="submit" className="submit-btn group" disabled={loading}>
+                            {loading ? 'Memproses...' : 'Masuk Sekarang'}
+                            {!loading && <ArrowRight size={20} className="arrow-icon" />}
                         </button>
                     </form>
 

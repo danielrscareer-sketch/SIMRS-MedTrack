@@ -25,7 +25,7 @@ if is_sqlite:
 else:
     # PostgreSQL Configuration
     engine = create_async_engine(
-        settings.DATABASE_URL.split("?")[0], # Strip query params that might conflict
+        settings.DATABASE_URL, # Keep SSL and other connection params intact
         echo=False,
         pool_pre_ping=True,
         pool_size=10,

@@ -1,0 +1,15 @@
+.vercel
+.env
+.env.local
+.env.production
+*.env
+API.env
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+scratch/

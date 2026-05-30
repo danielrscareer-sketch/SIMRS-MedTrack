@@ -1,0 +1,46 @@
+timestamp,tenant_name,category,amount,member_tier,payment_method
+2026-04-09 09:15:00+07:00,Uniqlo,Fashion,450000,Gold,QRIS
+2026-04-09 09:42:00+07:00,J.Co Donuts,Food & Beverage,85000,Silver,Cash
+2026-04-09 10:03:00+07:00,Cinema XXI,Entertainment,120000,Non-Member,Credit
+2026-04-09 10:18:00+07:00,Gramedia,Books & Stationery,195000,Bronze,Debit
+2026-04-09 10:45:00+07:00,The Body Shop,Beauty & Health,380000,Platinum,Credit
+2026-04-09 11:00:00+07:00,H&M,Fashion,620000,Gold,Credit
+2026-04-09 11:22:00+07:00,Hokkaido Ramen,Food & Beverage,175000,Silver,QRIS
+2026-04-09 11:50:00+07:00,iBox,Electronics,1850000,Non-Member,Credit
+2026-04-09 12:10:00+07:00,Zara,Fashion,890000,Platinum,Credit
+2026-04-09 12:35:00+07:00,Sushi Tei,Food & Beverage,210000,Gold,Debit
+2026-04-10 09:05:00+07:00,Uniqlo,Fashion,320000,Silver,QRIS
+2026-04-10 09:30:00+07:00,J.Co Donuts,Food & Beverage,65000,Non-Member,Cash
+2026-04-10 10:00:00+07:00,Cinema XXI,Entertainment,120000,Bronze,Credit
+2026-04-10 10:20:00+07:00,Gramedia,Books & Stationery,275000,Gold,Debit
+2026-04-10 10:55:00+07:00,The Body Shop,Beauty & Health,450000,Platinum,Credit
+2026-04-10 11:15:00+07:00,H&M,Fashion,530000,Gold,QRIS
+2026-04-10 11:40:00+07:00,Hokkaido Ramen,Food & Beverage,155000,Silver,Cash
+2026-04-10 12:05:00+07:00,iBox,Electronics,2100000,Non-Member,Credit
+2026-04-10 12:30:00+07:00,Zara,Fashion,745000,Gold,Credit
+2026-04-10 13:00:00+07:00,Sushi Tei,Food & Beverage,185000,Bronze,QRIS
+2026-04-11 10:00:00+07:00,Uniqlo,Fashion,580000,Platinum,Credit
+2026-04-11 10:25:00+07:00,J.Co Donuts,Food & Beverage,95000,Gold,QRIS
+2026-04-11 11:00:00+07:00,Cinema XXI,Entertainment,240000,Silver,Credit
+2026-04-11 11:20:00+07:00,H&M,Fashion,410000,Non-Member,Debit
+2026-04-11 12:00:00+07:00,Hokkaido Ramen,Food & Beverage,220000,Gold,Cash
+2026-04-12 09:45:00+07:00,Gramedia,Books & Stationery,140000,Silver,Debit
+2026-04-12 10:10:00+07:00,The Body Shop,Beauty & Health,330000,Gold,QRIS
+2026-04-12 10:45:00+07:00,Uniqlo,Fashion,760000,Platinum,Credit
+2026-04-12 11:30:00+07:00,Sushi Tei,Food & Beverage,195000,Silver,Debit
+2026-04-12 12:15:00+07:00,iBox,Electronics,3200000,Non-Member,Credit
+2026-04-13 10:00:00+07:00,Cinema XXI,Entertainment,360000,Gold,Credit
+2026-04-13 10:30:00+07:00,Zara,Fashion,1100000,Platinum,Credit
+2026-04-13 11:00:00+07:00,J.Co Donuts,Food & Beverage,110000,Bronze,Cash
+2026-04-13 11:45:00+07:00,H&M,Fashion,670000,Silver,QRIS
+2026-04-13 12:30:00+07:00,Gramedia,Books & Stationery,225000,Gold,Debit
+2026-04-14 10:00:00+07:00,Hokkaido Ramen,Food & Beverage,280000,Platinum,Cash
+2026-04-14 10:40:00+07:00,Uniqlo,Fashion,890000,Gold,Credit
+2026-04-14 11:15:00+07:00,The Body Shop,Beauty & Health,415000,Silver,QRIS
+2026-04-14 12:00:00+07:00,Sushi Tei,Food & Beverage,230000,Gold,Debit
+2026-04-14 13:00:00+07:00,iBox,Electronics,5600000,Non-Member,Credit
+2026-04-15 09:00:00+07:00,Cinema XXI,Entertainment,180000,Bronze,Credit
+2026-04-15 09:30:00+07:00,Zara,Fashion,925000,Gold,Credit
+2026-04-15 10:00:00+07:00,J.Co Donuts,Food & Beverage,75000,Silver,QRIS
+2026-04-15 10:30:00+07:00,H&M,Fashion,480000,Non-Member,Debit
+2026-04-15 11:00:00+07:00,Gramedia,Books & Stationery,310000,Gold,Cash

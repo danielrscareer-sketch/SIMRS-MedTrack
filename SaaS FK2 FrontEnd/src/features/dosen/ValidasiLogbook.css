@@ -1,0 +1,504 @@
+.validasi-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.validasi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.stat-box {
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.stat-box.warning {
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.stat-box h2 {
+    font-size: 2.5rem;
+    color: #F59E0B;
+}
+
+.stat-box span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.validasi-toolbar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--surface-glass);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--surface-border);
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    color: var(--text-primary);
+}
+
+.btn-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.validasi-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.validation-card {
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.student-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(35, 64, 142, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-profile h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.date-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0,0,0,0.05);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.card-body {
+    background: rgba(0,0,0,0.02);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.value {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    text-align: right;
+    max-width: 60%;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    border-top: 1px solid var(--surface-border);
+    padding-top: 1.5rem;
+}
+
+.btn-reject, .btn-approve {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-reject {
+    background: transparent;
+    color: #EF4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.btn-reject:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.btn-approve {
+    background: #10B981;
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+.btn-approve:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.empty-validation-state {
+    text-align: center;
+    padding: 4rem;
+    background: var(--surface-glass);
+    border-radius: 16px;
+    border: 1px dashed var(--surface-border);
+}
+
+.empty-validation-state h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.empty-validation-state p {
+    color: var(--text-secondary);
+}
+
+/* Accordion & Expanded Content Styling */
+.expand-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.expand-btn:hover {
+    background: rgba(0,0,0,0.05);
+    color: var(--primary);
+}
+
+.validation-card.expanded {
+    border-color: var(--primary);
+    box-shadow: 0 8px 30px rgba(35, 64, 142, 0.1);
+}
+
+.expanded-content {
+    border-top: 1px dashed var(--surface-border);
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.expanded-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.ex-detail-item {
+    background: rgba(0,0,0,0.02);
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ex-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ex-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.highlight-role {
+    color: var(--primary);
+}
+
+.ex-summary-box {
+    background: rgba(35, 64, 142, 0.05);
+    border: 1px solid rgba(35, 64, 142, 0.1);
+    padding: 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ex-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+/* SOAP Section Styling */
+.ex-soap-box {
+    background: rgba(35, 64, 142, 0.03);
+    border: 1px solid rgba(35, 64, 142, 0.1);
+    padding: 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.soap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .soap-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.soap-item {
+    display: flex;
+    gap: 1rem;
+    background: var(--surface-default);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--surface-border);
+}
+
+.soap-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.soap-badge.s {
+    background: rgba(239, 68, 68, 0.15); /* Red for Subjective */
+    color: #EF4444;
+}
+
+.soap-badge.o {
+    background: rgba(16, 185, 129, 0.15); /* Green for Objective */
+    color: #10B981;
+}
+
+.soap-badge.a {
+    background: rgba(245, 158, 11, 0.15); /* Orange for Assessment */
+    color: #F59E0B;
+}
+
+.soap-badge.p {
+    background: rgba(59, 130, 246, 0.15); /* Blue for Plan */
+    color: #3B82F6;
+}
+
+.soap-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.soap-content strong {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.soap-content p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Grading Section */
+.grading-section {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+}
+
+.grade-input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.grade-input-group label, .comment-input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.grade-input-group select {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--surface-border);
+    background: white;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+}
+
+.grade-input-group select:focus {
+    border-color: var(--primary);
+}
+
+.comment-input-group {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.comment-input-group input {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--surface-border);
+    background: white;
+    width: 100%;
+    outline: none;
+}
+
+.comment-input-group input:focus {
+    border-color: var(--primary);
+}
+
+.btn-approve:disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.btn-approve:disabled:hover {
+    transform: none;
+}
+
+/* Print Optimization for Medical Records */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    .validation-card.expanded, .validation-card.expanded * {
+        visibility: visible;
+    }
+    
+    .validation-card.expanded {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+    
+    .ex-soap-box {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        border: 1px solid #000;
+        background: transparent !important;
+    }
+    
+    .card-actions, .expand-btn, .btn-secondary, .validasi-header, .validasi-toolbar, .grading-section {
+        display: none !important;
+    }
+    
+    .ex-detail-item {
+        border: 1px solid #ddd;
+        background: transparent !important;
+    }
+}

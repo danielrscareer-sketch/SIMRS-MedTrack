@@ -1,0 +1,378 @@
+.overview-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.overview-header {
+    margin-bottom: 0.5rem;
+}
+
+.overview-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.overview-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Stats Layout */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-glass);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Shimmer Effect Base */
+.stat-card::after, .main-panel::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transform: rotate(45deg) translateY(100%);
+    transition: all 0.5s;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.stat-card:hover::after, .main-panel:hover::after {
+    animation: shimmerEffect 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes shimmerEffect {
+    0% { transform: rotate(45deg) translateY(100%); }
+    100% { transform: rotate(45deg) translateY(-100%); }
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(35, 64, 142, 0.15); /* Primary color shadow */
+}
+
+.stat-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.stat-icon-wrapper {
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon-wrapper.primary { background-color: rgba(35, 64, 142, 0.1); color: var(--primary); }
+.stat-icon-wrapper.warning { background-color: rgba(245, 158, 11, 0.1); color: var(--warning); }
+.stat-icon-wrapper.success { background-color: rgba(16, 185, 129, 0.1); color: var(--success); }
+.stat-icon-wrapper.accent { background-color: rgba(237, 27, 36, 0.1); color: var(--accent); }
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-desc {
+    font-size: 0.875rem;
+}
+
+.stat-desc.success { color: var(--success); }
+.stat-desc.warning-text { color: var(--warning); }
+.stat-desc.muted { color: var(--text-tertiary); }
+
+/* Main Grid Layout */
+.overview-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .overview-content-grid { grid-template-columns: 2fr 1fr; }
+}
+
+.main-panel {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-glass);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Skills Layout */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.skill-percentage {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.progress-track {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 9999px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background-color: var(--primary);
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1s ease-out;
+}
+
+/* Schedule Layout */
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+.dark .schedule-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.schedule-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 55px;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.schedule-date.primary-date {
+    background-color: rgba(35, 64, 142, 0.1);
+    color: var(--primary);
+}
+
+.schedule-date.accent-date {
+    background-color: rgba(237, 27, 36, 0.1);
+    color: var(--accent);
+}
+
+.date-number {
+    font-size: 1.125rem;
+    font-weight: 800;
+    margin-bottom: 0.1rem;
+}
+
+.date-month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.schedule-details {
+    flex: 1;
+}
+
+.schedule-event {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.schedule-location {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+/* Medical Animations */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes pulseSlow {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 4s ease-in-out 2s infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulseSlow 3s ease-in-out infinite;
+}
+
+/* ER Capacity Widget styles */
+.er-panel {
+    background-image: url('/hospital_er_bg.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 250px;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.er-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(35, 64, 142, 0.4) 100%);
+    z-index: 0;
+}
+
+.er-panel > * {
+    position: relative;
+    z-index: 1;
+}
+
+.er-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1.5rem;
+}
+
+.er-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.er-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.er-stat-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.er-stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+

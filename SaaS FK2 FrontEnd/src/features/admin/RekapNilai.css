@@ -1,0 +1,170 @@
+.rekap-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.rekap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Summary Cards */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.summary-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.summary-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.summary-card.blue  .summary-icon { background: rgba(35,64,142,0.1); color: var(--primary); }
+.summary-card.green .summary-icon { background: rgba(16,185,129,0.1); color: #10B981; }
+.summary-card.yellow .summary-icon { background: rgba(245,158,11,0.1); color: #F59E0B; }
+.summary-card.red   .summary-icon { background: rgba(239,68,68,0.1);  color: #EF4444; }
+
+.summary-label { font-size: 0.8rem; color: var(--text-secondary); margin: 0; }
+.summary-value { font-size: 2rem; font-weight: 800; margin: 0; color: var(--text-primary); line-height: 1.1; }
+
+/* Toolbar */
+.rekap-toolbar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.rekap-toolbar .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.rekap-toolbar .search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.rekap-toolbar select {
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    background: var(--surface-glass);
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Table */
+.rekap-table-wrapper {
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.rekap-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rekap-table thead tr {
+    background: rgba(0,0,0,0.03);
+}
+
+.rekap-table th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--surface-border);
+    white-space: nowrap;
+}
+
+.rekap-table td {
+    padding: 0.9rem 1rem;
+    font-size: 0.875rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--surface-border);
+    color: var(--text-primary);
+}
+
+.rekap-table tbody tr:last-child td { border-bottom: none; }
+
+.rekap-table tbody tr:hover { background: var(--surface-hover); }
+
+.text-muted { font-size: 0.78rem; color: var(--text-tertiary); }
+
+/* Progress */
+.progress-pill { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; }
+.progress-bar-track { flex: 1; height: 6px; background: rgba(0,0,0,0.08); border-radius: 99px; overflow: hidden; }
+.progress-bar-fill  { height: 100%; border-radius: 99px; transition: width 0.4s ease; }
+
+/* Chips */
+.role-chip {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    margin-right: 0.25rem;
+}
+
+.role-chip.spesialis { background: rgba(35,64,142,0.12); color: var(--primary); }
+.role-chip.unit { background: rgba(16,185,129,0.12); color: #065F46; }
+
+/* Grade */
+.grade-display { font-size: 0.875rem; }
+.grade-display strong { color: var(--primary); }
+.grade-avg { font-weight: 700; }
+.grade-avg strong { color: var(--accent); }
+
+/* Status Badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-badge.lulus   { background: rgba(16,185,129,0.15); color: #065F46; }
+.status-badge.ontrack { background: rgba(35,64,142,0.12);  color: var(--primary); }
+.status-badge.berisiko { background: rgba(239,68,68,0.12); color: #B91C1C; }

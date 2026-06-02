@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Activity, FileText } from 'lucide-react';
+import { Clock, Activity } from 'lucide-react';
 import './CPPTTimeline.css';
 
 interface CPPTRecord {

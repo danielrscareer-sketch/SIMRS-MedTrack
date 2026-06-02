@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Users, Building2, Plus, UserPlus, Search, MapPin, Stethoscope, Megaphone, Send, AlertCircle } from 'lucide-react';
+import { Users, Building2, Plus, UserPlus, Search, MapPin, Megaphone, Send, AlertCircle } from 'lucide-react';
 import './MasterDataModule.css';
 
 const API_BASE = 'http://127.0.0.1:8000/api';

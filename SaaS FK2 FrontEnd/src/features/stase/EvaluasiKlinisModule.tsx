@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, User, CheckCircle, Clock, XCircle, FileSignature, BookOpen, AlertCircle } from 'lucide-react';
+import { Send, User, CheckCircle, Clock, FileSignature, BookOpen, AlertCircle } from 'lucide-react';
 import './EvaluasiKlinisModule.css';
 
 interface HistoryItem {

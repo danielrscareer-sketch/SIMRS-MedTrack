@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, X, Activity } from 'lucide-react';
+import { Calculator, X } from 'lucide-react';
 import './MedicalCalculator.css';
 
 interface MedicalCalculatorProps {

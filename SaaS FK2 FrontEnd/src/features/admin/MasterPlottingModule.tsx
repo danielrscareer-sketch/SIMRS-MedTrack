@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UserPlus, Save, Search, Building, PieChart, Users, MapPin } from 'lucide-react';
+import { UserPlus, Save, Search, Building, Users, MapPin } from 'lucide-react';
 import './MasterPlotting.css';
 
 interface PlottingRecord {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activity, Search, Filter, Clock, User, Calendar, Plus, CheckCircle, X } from 'lucide-react';
+import { Activity, Search, Filter, User, Calendar, Plus, CheckCircle, X } from 'lucide-react';
 import './CPPTModule.css';
 
 interface CPPTRecord {

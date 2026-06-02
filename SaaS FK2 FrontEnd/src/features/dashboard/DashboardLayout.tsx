@@ -3,7 +3,7 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { 
     Activity, LayoutDashboard, Stethoscope, BookOpen, 
     FileText, UserCircle, LogOut, Menu, Bell, 
-    CheckCircle, Users, Settings, ClipboardList, BarChart2
+    CheckCircle, Users, Settings, ClipboardList, BarChart2, CalendarClock
 } from 'lucide-react';
 import './DashboardLayout.css';
 
@@ -26,15 +26,21 @@ const DashboardLayout: React.FC = () => {
     const navItemsKoas = [
         { path: '/dashboard', label: 'Ringkasan', icon: <LayoutDashboard size={22} /> },
         { path: '/dashboard/stase', label: 'Stase / Departemen', icon: <Stethoscope size={22} /> },
+        { path: '/dashboard/jadwal', label: 'Jadwal Dinas', icon: <CalendarClock size={22} /> },
         { path: '/dashboard/logbook', label: 'Log Book', icon: <BookOpen size={22} /> },
+        { path: '/dashboard/cppt', label: 'E-CPPT', icon: <Activity size={22} /> },
+        { path: '/dashboard/evaluasi', label: 'Permintaan Evaluasi', icon: <ClipboardList size={22} /> },
         { path: '/dashboard/tugas', label: 'Tugas & Evaluasi', icon: <FileText size={22} /> },
+        { path: '/dashboard/referensi', label: 'Buku Obat', icon: <BookOpen size={22} /> },
     ];
 
     const navItemsDosen = [
         { path: '/dashboard', label: 'Ringkasan', icon: <LayoutDashboard size={22} /> },
         { path: '/dashboard/validasi', label: 'Validasi Log Book', icon: <CheckCircle size={22} /> },
+        { path: '/dashboard/cppt', label: 'Pantau E-CPPT', icon: <Activity size={22} /> },
         { path: '/dashboard/penilaian-tugas', label: 'Penilaian Tugas', icon: <ClipboardList size={22} /> },
         { path: '/dashboard/bimbingan', label: 'Mahasiswa Bimbingan', icon: <Users size={22} /> },
+        { path: '/dashboard/referensi', label: 'Buku Obat', icon: <BookOpen size={22} /> },
     ];
 
     const navItemsAdmin = [

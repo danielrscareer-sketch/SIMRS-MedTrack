@@ -1,110 +1,217 @@
 .plotting-page {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    padding: 1rem;
 }
 
 .plotting-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-bottom: 2rem;
 }
 
-.plotting-toolbar {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.plotting-layout {
+/* Analytics Dashboard */
+.analytics-dashboard {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* form on left, table on right */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
-@media (max-width: 1024px) {
+.stat-card {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(35, 64, 142, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-data h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.stat-data h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.stat-data span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+}
+
+.distribution-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+}
+
+.distribution-card h4 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.progress-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* Plotting Layout */
+.plotting-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
     .plotting-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 2fr;
     }
 }
 
-.plotting-card {
-    background: var(--surface-glass);
-    border: 1px solid var(--surface-border);
-    border-radius: 16px;
+.plotting-panel {
+    background: var(--surface);
+    border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-
-.panel-title {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--surface-border);
+    border: 1px solid var(--border-color);
 }
 
 .plotting-form {
     display: flex;
     flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+/* Modern List */
+.modern-list {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+.list-item {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.2s;
 }
 
-.table-responsive {
-    overflow-x: auto;
+.list-item:hover {
+    background: var(--surface);
+    border-color: var(--primary);
+    transform: translateX(4px);
 }
 
-.plotting-table {
-    width: 100%;
-    border-collapse: collapse;
+.list-item-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.plotting-table th,
-.plotting-table td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--surface-border);
-}
-
-.plotting-table th {
+.student-name {
+    margin: 0;
+    font-size: 1.1rem;
     font-weight: 600;
+    color: var(--text-primary);
+}
+
+.list-item-details {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.3rem;
+}
+
+.detail-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(0, 0, 0, 0.03);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
 }
 
-.plotting-table tbody tr:hover {
-    background: var(--surface-hover);
+.list-item-stase {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary);
 }
 
-.badge-status {
-    padding: 0.25rem 0.75rem;
+.date-range {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    font-weight: normal;
+    margin-left: 0.5rem;
+}
+
+.status-badge {
+    padding: 0.2rem 0.6rem;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
-    text-transform: uppercase;
 }
 
-.badge-status.active {
-    background-color: rgba(16, 185, 129, 0.2);
-    color: #065F46;
+.status-badge.aktif {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
 }
 
-.badge-status.waiting {
-    background-color: rgba(245, 158, 11, 0.2);
-    color: #92400E;
+.status-badge.menunggu {
+    background: rgba(245, 158, 11, 0.1);
+    color: #F59E0B;
 }
 
-.badge-status.finished {
-    background-color: rgba(107, 114, 128, 0.2);
-    color: #374151;
+.status-badge.selesai {
+    background: rgba(100, 116, 139, 0.1);
+    color: #64748B;
 }

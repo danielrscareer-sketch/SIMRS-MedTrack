@@ -1,0 +1,184 @@
+.modul-bimbingan {
+    padding: 1rem;
+}
+
+.bimbingan-header {
+    margin-bottom: 2rem;
+}
+
+.bimbingan-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.metric-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(35, 64, 142, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metric-info h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.metric-info p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.bimbingan-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
+    .bimbingan-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.bimbingan-panel {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.bimbingan-panel h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.student-item:hover {
+    background: rgba(0, 0, 0, 0.01);
+    border-color: var(--primary);
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.student-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.student-details h4 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.student-details p {
+    margin: 0;
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+}
+
+.student-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.upcoming-meetings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.meeting-item {
+    background: rgba(245, 158, 11, 0.05);
+    border-left: 4px solid #F59E0B;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.meeting-time {
+    font-size: 0.85rem;
+    color: #F59E0B;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.meeting-title {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.meeting-type {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+}

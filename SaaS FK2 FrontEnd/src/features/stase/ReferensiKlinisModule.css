@@ -1,0 +1,218 @@
+.referensi-klinis-module {
+    padding: 1rem;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+.referensi-header {
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.referensi-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    flex: 1;
+    min-height: 0;
+}
+
+@media (min-width: 992px) {
+    .referensi-layout {
+        grid-template-columns: 350px 1fr;
+    }
+}
+
+.drug-list-panel {
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.search-section {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-color);
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+}
+
+.search-input-wrapper input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    color: var(--text-primary);
+}
+
+.drug-list-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.drug-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.drug-item:hover {
+    background: rgba(35, 64, 142, 0.03);
+}
+
+.drug-item.active {
+    background: rgba(35, 64, 142, 0.08);
+    border-left: 4px solid var(--primary);
+}
+
+.drug-name {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.drug-category {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: var(--bg-color);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+/* Detail Panel */
+.drug-detail-panel {
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    padding: 2rem;
+}
+
+.drug-detail-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.drug-detail-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 1.5rem 0 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.drug-text-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Calculator Area */
+.dose-calculator {
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.dose-calculator h4 {
+    margin: 0 0 1rem 0;
+    color: #065F46;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.calc-input-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.calc-input-group input {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    width: 100px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.calc-result {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px dashed #10B981;
+    text-align: center;
+}
+
+.calc-result .res-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #10B981;
+    margin-bottom: 0.2rem;
+}
+
+.calc-result .res-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.warning-box {
+    background: #FEF2F2;
+    border-left: 4px solid #EF4444;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 1.5rem;
+}
+
+.warning-box h4 {
+    margin: 0 0 0.5rem 0;
+    color: #991B1B;
+}
+
+.warning-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #7F1D1D;
+    line-height: 1.5;
+}
+
+.empty-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-tertiary);
+    text-align: center;
+}

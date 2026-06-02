@@ -5,9 +5,13 @@ from models.database import get_db
 from models.rotation import Rotation
 from models.stase import Stase
 from models.user import User
-from models.schemas import RekapNilaiResponse, RotationCreateRequest, RotationResponse, UserResponse
+from models.schemas import (
+    RekapNilaiResponse, RotationCreateRequest, RotationResponse, UserResponse,
+    UserCreateRequest, StaseCreateRequest
+)
 from typing import List, Optional
 import uuid
+import uuid as _uuid  # fallback
 
 router = APIRouter(prefix="/api/admin", tags=["Admin / TU Dashboard"])
 
@@ -144,3 +148,42 @@ async def list_users(role: Optional[str] = Query(None), db: AsyncSession = Depen
     result = await db.execute(stmt)
     users = result.scalars().all()
     return [UserResponse.model_validate(u) for u in users]
+
+
+@router.post("/users", response_model=UserResponse, status_code=201)
+async def create_user(payload: UserCreateRequest, db: AsyncSession = Depends(get_db)):
+    # Simple creation, without hashed password for mock demo purposes
+    # In real app, password must be hashed!
+    new_user = User(
+        user_id=_uuid.uuid4(),
+        username=payload.username,
+        password_hash=payload.password, # Plain text for mock demo
+        name=payload.name,
+        role=payload.role,
+        is_active=True
+    )
+    db.add(new_user)
+    try:
+        await db.commit()
+        await db.refresh(new_user)
+    except Exception as e:
+        await db.rollback()
+        raise HTTPException(status_code=400, detail="Gagal menambahkan user. Pastikan username unik.")
+    return UserResponse.model_validate(new_user)
+
+
+@router.post("/stase", status_code=201)
+async def create_stase(payload: StaseCreateRequest, db: AsyncSession = Depends(get_db)):
+    new_stase = Stase(
+        stase_id=_uuid.uuid4(),
+        name=payload.name,
+        duration_weeks=payload.duration_weeks
+    )
+    db.add(new_stase)
+    try:
+        await db.commit()
+        await db.refresh(new_stase)
+    except Exception as e:
+        await db.rollback()
+        raise HTTPException(status_code=400, detail="Gagal menambahkan stase.")
+    return {"message": "Stase berhasil ditambahkan", "stase_id": new_stase.stase_id, "name": new_stase.name}
